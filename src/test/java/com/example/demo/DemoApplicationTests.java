@@ -8,7 +8,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/main/resources/demo",
-        glue = {"com.example.demo.steps"}
+        glue = {"com.example.demo.steps"},
+		plugin = {
+		"pretty",
+		"html:target/reports/cucumber/index.html",
+		"json:target/report.json",
+		"junit:target/junit.xml"
+}
 )
 public class DemoApplicationTests {
 }
