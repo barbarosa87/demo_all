@@ -2,6 +2,7 @@ package com.example.demo.steps;
 
 
 import com.example.demo.configuration.Config;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.Getter;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
@@ -33,7 +34,7 @@ public class World {
 			options.addArguments("--headless=new");
 		}
 		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-		WebDriver driver = new ChromeDriver(options);
+		WebDriver driver = WebDriverManager.chromedriver().capabilities(options).create();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeout));
 		this.webDriver=driver;
 	}

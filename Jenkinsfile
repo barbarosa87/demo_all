@@ -4,9 +4,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-
-                // To run Maven on a Windows agent, use
-                sh "mvn  clean test"
+                sh "mvn clean test"
             }
 
             post {
