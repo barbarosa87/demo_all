@@ -16,6 +16,8 @@ public class Config {
 	@Value( "${urlpage}" )
 	private String appUrl;
 
+	@Value( "${headless}" )
+	private boolean headless;
 
 	@Value( "${password}" )
 	private String password;

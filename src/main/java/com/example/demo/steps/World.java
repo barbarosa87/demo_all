@@ -1,8 +1,8 @@
 package com.example.demo.steps;
 
+
 import com.example.demo.configuration.Config;
 import lombok.Getter;
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,6 +18,9 @@ public class World {
 
 	private WebDriver webDriver;
 
+	@Autowired
+	private Config config;
+
 	public void createDriver(long timeout){
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("enable-automation");
@@ -26,6 +29,9 @@ public class World {
 		options.addArguments("--disable-extensions");
 		options.addArguments("--dns-prefetch-disable");
 		options.addArguments("--disable-gpu");
+		if (config.isHeadless()){
+			options.addArguments("--headless=new");
+		}
 		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 		WebDriver driver = new ChromeDriver(options);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeout));
