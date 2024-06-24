@@ -23,6 +23,8 @@ public class Config {
 	private String password;
 
 
+	@Value( "${browser}" )
+	private String browser;
 
 	@Value( "${waittimeoutSeconds}" )
 	private int waittimeoutSeconds;

@@ -34,7 +34,13 @@ public class World {
 			options.addArguments("--headless=new");
 		}
 		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-		WebDriver driver = WebDriverManager.chromiumdriver().capabilities(options).create();
+		WebDriver driver=null;
+		if (config.getBrowser().equalsIgnoreCase("Chromium")){
+			 driver = WebDriverManager.chromiumdriver().capabilities(options).create();
+		}else if (config.getBrowser().equalsIgnoreCase("Chrome")){
+			driver = WebDriverManager.chromedriver().capabilities(options).create();
+		}
+
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeout));
 		this.webDriver=driver;
 	}
