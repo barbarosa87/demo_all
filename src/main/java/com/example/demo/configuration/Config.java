@@ -22,7 +22,6 @@ public class Config {
 	@Value( "${password}" )
 	private String password;
 
-
 	@Value( "${browser}" )
 	private String browser;
 
