@@ -23,6 +23,7 @@ public class Config {
 	private String password;
 
 
+
 	@Value( "${waittimeoutSeconds}" )
 	private int waittimeoutSeconds;
 
