@@ -8,4 +8,4 @@ By running the DemoApplicationTests it will generate a report at ./target/report
 
 change the following configs depending your needs
 headless=true or false for running locally
-browser=Chromium or Chrome 
+browser=Firefox or Chrome 
