@@ -7,8 +7,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/main/resources/demo",
+        features = "src/main/resources/features",
         glue = {"com.example.demo.steps"},
+		stepNotifications = true,
 		plugin = {
 		"pretty",
 		"html:target/reports/cucumber/index.html",
